@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{846F9271-F048-3442-8BF5-A3B911352DB6}</ProjectGuid>
+    <RootNamespace>occSketcher</RootNamespace>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.26100.0</WindowsTargetPlatformMinVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v142</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>occSketcher</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v142</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>occSketcher</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;opengl;gui;widgets</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;opengl;gui;widgets</QtModules>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">occSketcher</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">occSketcher</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\inc;release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;WNT;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKBin.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKBinL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKBinTObj.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKBinXCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKBO.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKBool.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKBRep.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKCDF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKD3DHost.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKD3DHostTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDE.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDECascade.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDEGLTF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDEIGES.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDEOBJ.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDEPLY.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDESTEP.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDESTL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDEVRML.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDFBrowser.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKDraw.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKernel.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKExpress.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKFeat.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKFillet.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKG2d.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKG3d.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKGeomAlgo.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKGeomBase.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKHLR.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKIVtk.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKIVtkDraw.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKLCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKMath.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKMesh.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKMeshVS.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKMessageModel.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKMessageView.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKOffset.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKOpenGl.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKOpenGles.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKOpenGlesTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKOpenGlTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKPrim.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKQADraw.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKRWMesh.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKService.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKShapeView.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKShHealing.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKStd.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKStdL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKTInspector.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKTInspectorAPI.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKTObj.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKTObjDRAW.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKToolsDraw.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKTopAlgo.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKTopTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKTreeModel.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKV3d.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKVCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKView.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKViewerTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKVInspector.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXDEDRAW.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXMesh.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXml.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXmlL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXmlTObj.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXmlXCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSBase.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSDRAW.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSDRAWDE.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSDRAWGLTF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSDRAWIGES.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSDRAWOBJ.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSDRAWPLY.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSDRAWSTEP.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSDRAWSTL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib\TKXSDRAWVRML.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\lib;C:\openssl\lib;C:\Utils\my_sql\mysql-5.7.25-winx64\lib;C:\Utils\postgresql\pgsql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)\occSketcher.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;WNT;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <InitFuncName>occSketcher</InitFuncName>
+      <Compression>default</Compression>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>$(ProjectDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\inc;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;WNT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKBin.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKBinL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKBinTObj.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKBinXCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKBO.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKBool.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKBRep.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKCDF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKD3DHost.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKD3DHostTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDE.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDECascade.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDEGLTF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDEIGES.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDEOBJ.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDEPLY.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDESTEP.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDESTL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDEVRML.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDFBrowser.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKDraw.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKernel.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKExpress.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKFeat.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKFillet.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKG2d.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKG3d.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKGeomAlgo.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKGeomBase.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKHLR.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKIVtk.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKIVtkDraw.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKLCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKMath.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKMesh.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKMeshVS.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKMessageModel.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKMessageView.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKOffset.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKOpenGl.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKOpenGles.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKOpenGlesTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKOpenGlTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKPrim.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKQADraw.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKRWMesh.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKService.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKShapeView.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKShHealing.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKStd.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKStdL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKTInspector.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKTInspectorAPI.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKTObj.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKTObjDRAW.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKToolsDraw.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKTopAlgo.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKTopTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKTreeModel.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKV3d.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKVCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKView.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKViewerTest.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKVInspector.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXDEDRAW.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXMesh.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXml.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXmlL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXmlTObj.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXmlXCAF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSBase.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSDRAW.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSDRAWDE.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSDRAWGLTF.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSDRAWIGES.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSDRAWOBJ.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSDRAWPLY.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSDRAWSTEP.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSDRAWSTL.lib;F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd\TKXSDRAWVRML.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:\OpenCasCAD\opencascade-7.9.1\opencascade-7.9.1\win64\vc14\libd;C:\openssl\lib;C:\Utils\my_sql\mysql-5.7.25-winx64\lib;C:\Utils\postgresql\pgsql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\occSketcher.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;WNT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <InitFuncName>occSketcher</InitFuncName>
+      <Compression>default</Compression>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>$(ProjectDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Geom2d_Arc.cxx" />
+    <ClCompile Include="Geom2d_Edge.cxx" />
+    <ClCompile Include="Main.cxx" />
+    <ClCompile Include="Sketcher.cxx" />
+    <ClCompile Include="occQt.cpp" />
+    <ClCompile Include="occView.cpp" />
+    <ClCompile Include="Sketcher_AnalyserSnap.cxx" />
+    <ClCompile Include="Sketcher_Command.cxx" />
+    <ClCompile Include="Sketcher_CommandArc3P.cxx" />
+    <ClCompile Include="Sketcher_CommandArcCenter2P.cxx" />
+    <ClCompile Include="Sketcher_CommandBezierCurve.cxx" />
+    <ClCompile Include="Sketcher_CommandCircle2PTan.cxx" />
+    <ClCompile Include="Sketcher_CommandCircle3P.cxx" />
+    <ClCompile Include="Sketcher_CommandCircle3Tan.cxx" />
+    <ClCompile Include="Sketcher_CommandCircleCenterRadius.cxx" />
+    <ClCompile Include="Sketcher_CommandCircleP2Tan.cxx" />
+    <ClCompile Include="Sketcher_CommandLine2P.cxx" />
+    <ClCompile Include="Sketcher_CommandPoint.cxx" />
+    <ClCompile Include="Sketcher_CommandTrim.cxx" />
+    <ClCompile Include="Sketcher_GUI.cxx" />
+    <ClCompile Include="Sketcher_Object.cxx" />
+    <ClCompile Include="Sketcher_Property.cxx" />
+    <ClCompile Include="Sketcher_PropertyArc.cxx" />
+    <ClCompile Include="Sketcher_PropertyCircle.cxx" />
+    <ClCompile Include="Sketcher_PropertyLine.cxx" />
+    <ClCompile Include="Sketcher_PropertyPoint.cxx" />
+    <ClCompile Include="Sketcher_QtGUI.cxx" />
+    <ClCompile Include="Sketcher_Snap.cxx" />
+    <ClCompile Include="Sketcher_SnapCenter.cxx" />
+    <ClCompile Include="Sketcher_SnapEnd.cxx" />
+    <ClCompile Include="Sketcher_SnapIntersection.cxx" />
+    <ClCompile Include="Sketcher_SnapLine.cxx" />
+    <ClCompile Include="Sketcher_SnapLineParallel.cxx" />
+    <ClCompile Include="Sketcher_SnapLinePerpendicular.cxx" />
+    <ClCompile Include="Sketcher_SnapMiddle.cxx" />
+    <ClCompile Include="Sketcher_SnapNearest.cxx" />
+    <ClCompile Include="Sketcher_SnapTangent.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Geom2d_Arc.hxx" />
+    <ClInclude Include="Geom2d_Edge.hxx" />
+    <ClInclude Include="Sketcher.h" />
+    <ClInclude Include="Sketcher.hxx" />
+    <ClInclude Include="Sketcher_AnalyserSnap.hxx" />
+    <ClInclude Include="Sketcher_Command.hxx" />
+    <ClInclude Include="Sketcher_CommandArc3P.hxx" />
+    <ClInclude Include="Sketcher_CommandArcCenter2P.hxx" />
+    <ClInclude Include="Sketcher_CommandBezierCurve.hxx" />
+    <ClInclude Include="Sketcher_CommandCircle2PTan.hxx" />
+    <ClInclude Include="Sketcher_CommandCircle3P.hxx" />
+    <ClInclude Include="Sketcher_CommandCircle3Tan.hxx" />
+    <ClInclude Include="Sketcher_CommandCircleCenterRadius.hxx" />
+    <ClInclude Include="Sketcher_CommandCircleP2Tan.hxx" />
+    <ClInclude Include="Sketcher_CommandLine2P.hxx" />
+    <ClInclude Include="Sketcher_CommandPoint.hxx" />
+    <ClInclude Include="Sketcher_CommandTrim.hxx" />
+    <ClInclude Include="Sketcher_GUI.hxx" />
+    <ClInclude Include="Sketcher_Object.hxx" />
+    <ClInclude Include="Sketcher_ObjectGeometryType.hxx" />
+    <ClInclude Include="Sketcher_ObjectType.hxx" />
+    <ClInclude Include="Sketcher_ObjectTypeOfMethod.hxx" />
+    <ClInclude Include="Sketcher_Property.hxx" />
+    <ClInclude Include="Sketcher_PropertyArc.hxx" />
+    <ClInclude Include="Sketcher_PropertyCircle.hxx" />
+    <ClInclude Include="Sketcher_PropertyLine.hxx" />
+    <ClInclude Include="Sketcher_PropertyPoint.hxx" />
+    <ClInclude Include="Sketcher_QtGUI.hxx" />
+    <ClInclude Include="Sketcher_Snap.hxx" />
+    <ClInclude Include="Sketcher_SnapCenter.hxx" />
+    <ClInclude Include="Sketcher_SnapEnd.hxx" />
+    <ClInclude Include="Sketcher_SnapIntersection.hxx" />
+    <ClInclude Include="Sketcher_SnapLine.hxx" />
+    <ClInclude Include="Sketcher_SnapLineParallel.hxx" />
+    <ClInclude Include="Sketcher_SnapLinePerpendicular.hxx" />
+    <ClInclude Include="Sketcher_SnapMiddle.hxx" />
+    <ClInclude Include="Sketcher_SnapNearest.hxx" />
+    <ClInclude Include="Sketcher_SnapTangent.hxx" />
+    <ClInclude Include="Sketcher_SnapType.hxx" />
+    <QtMoc Include="occQt.h" />
+    <QtMoc Include="occView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;$(IntDir)\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;$(IntDir)\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="occQt.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="occSketcher.qrc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

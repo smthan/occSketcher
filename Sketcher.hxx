@@ -17,7 +17,11 @@
 #include <Geom_Line.hxx>
 #include <Geom_Plane.hxx>
 #include <Geom2d_CartesianPoint.hxx>
-#include <V3d_Coordinate.hxx>
+#include <V3d_view.hxx>
+#include <Standard_Real.hxx>
+
+typedef Standard_Real V3d_Coordinate;
+
 
 #include "Sketcher_SnapType.hxx"
 #include "Sketcher_AnalyserSnap.hxx"
@@ -166,6 +170,7 @@ void ObjectAction(const Sketcher_ObjectTypeOfMethod theMethod);
  * \param projVy const Standard_Real&
  * \param projVz const Standard_Real&
 */
+
 void OnMouseInputEvent(const V3d_Coordinate &v3dX,const V3d_Coordinate &v3dY,const V3d_Coordinate &v3dZ,const Standard_Real& projVx,const Standard_Real& projVy,const Standard_Real& projVz);
 
 /**

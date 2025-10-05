@@ -99,7 +99,7 @@ void OccView::init()
     #endif
 
     // Create V3dViewer and V3d_View
-    myViewer = new V3d_Viewer(GetGraphicDriver(), Standard_ExtString("viewer3d"));
+    myViewer = new V3d_Viewer(GetGraphicDriver()); //, Standard_ExtString("viewer3d")
 
     myView = myViewer->CreateView();
 
@@ -185,7 +185,26 @@ void OccView::drawLine()
 {
     qDebug() << "Draw Line";
 
+    mySketcher->SetSnap(SnapAnalyse);
     mySketcher->ObjectAction(Line2P_Method);
+
+    myCurrentMode = CurAction3d_Sketcher;
+}
+
+void OccView::drawPoint()
+{
+    qDebug() << "Draw Line";
+
+    mySketcher->ObjectAction(Point_Method);
+
+    myCurrentMode = CurAction3d_Sketcher;
+}
+
+void OccView::drawCircle()
+{
+    qDebug() << "Draw Line";
+
+    mySketcher->ObjectAction(CircleCenterRadius_Method);
 
     myCurrentMode = CurAction3d_Sketcher;
 }
@@ -245,7 +264,7 @@ void OccView::onLButtonDown( const int /*theFlags*/, const QPoint thePoint )
         double aVx, aVy, aVz;
         double aPx, aPy, aPz;
 
-        myView->Convert(myXmin, myYmin, aVx, aVy, aVz);        myView->Proj(aPx, aPy, aPz);
+        myView->Convert(myXmin, myYmin, aVx, aVy, aVz);        myView->Proj(aPx, aPy, aPz);
         mySketcher->OnMouseInputEvent(aVx, aVy, aVz, aPx, aPy, aPz);
     }
 }
@@ -383,7 +402,7 @@ void OccView::onMouseMove( const int theFlags, const QPoint thePoint )
         double aVx, aVy, aVz;
         double aPx, aPy, aPz;
 
-        myView->Convert(myXmin, myYmin, aVx, aVy, aVz);        myView->Proj(aPx, aPy, aPz);
+        myView->Convert(myXmin, myYmin, aVx, aVy, aVz);        myView->Proj(aPx, aPy, aPz);
         mySketcher->OnMouseMoveEvent(aVx, aVy, aVz, aPx, aPy, aPz);
     }
 

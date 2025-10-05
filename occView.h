@@ -58,7 +58,8 @@ public slots:
 
     //! 
     void drawLine();
-
+    void drawPoint();
+    void drawCircle();
 protected:
     virtual QPaintEngine* paintEngine() const;
 
